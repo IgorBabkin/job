@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/IgorBabkin/job/issues"
   },
-  "homepage": "https://github.com/IgorBabkin/job#readme"
+  "homepage": "https://github.com/IgorBabkin/job#readme",
+  "dependencies": {
+    "eventemitter2": "^0.4.14"
+  }
 }
