@@ -1,0 +1,19 @@
+{
+  "name": "job",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorBabkin/job.git"
+  },
+  "author": "Igor Babkin <igba14@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IgorBabkin/job/issues"
+  },
+  "homepage": "https://github.com/IgorBabkin/job#readme"
+}
