@@ -18,5 +18,9 @@
   "homepage": "https://github.com/IgorBabkin/job#readme",
   "dependencies": {
     "eventemitter2": "^0.4.14"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.3.4"
   }
 }
