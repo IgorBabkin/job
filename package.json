@@ -2,7 +2,7 @@
   "name": "job",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./lib/job.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
