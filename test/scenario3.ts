@@ -1,22 +1,29 @@
-var job_1 = require("../lib/job");
-var expect = require("expect.js");
-describe('Scenario 3', function () {
-    it('should throw timeout error and be available to be stopped right after error', function (done) {
-        var isStartCalled = false;
-        var isDoneCalled = false;
-        var executeCallsCount = 0;
-        var retryCallsCount = 0;
-        var isRunningOnExecute = false;
-        var reason;
-        var job = new job_1.default(function () {
-            return new Promise(function (resolve, reject) {
-                setTimeout(reject.bind(null, 'hey'), retryCallsCount < 2 ? 200 : 1500);
+import Job from "../lib/job";
+let expect  = require("expect.js");
+
+describe('Scenario 3', () => {
+    it('should throw timeout error and be available to be stopped right after error', (done) => {
+        let isStartCalled = false;
+        let isDoneCalled = false;
+        let executeCallsCount = 0;
+        let retryCallsCount = 0;
+        let isRunningOnExecute = false;
+        let reason;
+
+        let job = new Job(() => {
+            return new Promise((resolve, reject) => {
+                setTimeout(
+                    reject.bind(null, 'hey'),
+                    retryCallsCount < 2 ? 200 : 1500
+                );
             });
         }, 100);
-        job.on('start', function () {
+
+        job.on('start', () => {
             isStartCalled = true;
         });
-        job.on('stop', function () {
+
+        job.on('stop', () => {
             try {
                 expect(isStartCalled).to.be.ok();
                 expect(isDoneCalled).to.not.be.ok();
@@ -27,25 +34,29 @@ describe('Scenario 3', function () {
                 expect(isRunningOnExecute).to.be.ok();
                 expect(reason).to.be('hey');
                 done();
-            }
-            catch (err) {
+            } catch (err) {
                 done(err);
             }
         });
-        job.on('execute', function () {
+
+        job.on('execute', () => {
             executeCallsCount++;
             isRunningOnExecute = job.isRunning;
         });
-        job.on('retry', function (msg) {
+
+        job.on('retry', (msg) => {
             retryCallsCount++;
             reason = msg;
         });
-        job.on('error', function () {
+
+        job.on('error', () => {
             job.stop();
         });
-        job.on('done', function () {
+
+        job.on('done', () => {
             isDoneCalled = true;
         });
+
         job.executionTimeout = 1000;
         job.start();
     });
