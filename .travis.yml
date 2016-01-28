@@ -4,7 +4,6 @@ node_js:
   - "5"
 before_install:
   - npm install -g typescript tsd
-install:
-  - npm start
-script:
-  - npm run build && npm test
+  - tsd install
+before_script:
+  - npm run build
