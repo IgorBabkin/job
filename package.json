@@ -1,13 +1,14 @@
 {
   "name": "job",
   "version": "0.0.1",
-  "description": "",
+  "description": "dff",
   "main": "./lib/job.ts",
   "scripts": {
     "start": "tsd install && npm install",
     "test": "tsc && mocha",
     "prepublish": "tsc",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "prepush": "npm test"
   },
   "repository": {
     "type": "git",
