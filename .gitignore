@@ -1,6 +1,5 @@
 .idea
 node_modules
-*.tgz
-test/*.js
-test/*.d.ts
+*.js
+*.d.ts
 typings
