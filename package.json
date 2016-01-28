@@ -1,9 +1,10 @@
 {
   "name": "job",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "./lib/job.ts",
   "scripts": {
+    "start": "npm install && tsd install",
     "test": "tsc && mocha"
   },
   "repository": {
@@ -22,5 +23,8 @@
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^2.3.4"
+  },
+  "typescript": {
+    "definition": "lib/job.d.ts"
   }
 }
