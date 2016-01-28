@@ -7,9 +7,9 @@
     "start": "tsd install && npm install",
     "build": "tsc",
     "test": "mocha",
-    "prepublish": "npm build && npm test",
-    "precommit": "npm build && npm test",
-    "prepush": "npm build && npm test"
+    "prepublish": "npm run build && npm test",
+    "precommit": "npm run build && npm test",
+    "prepush": "npm run build && npm test"
   },
   "repository": {
     "type": "git",
