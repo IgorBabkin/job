@@ -4,8 +4,10 @@
   "description": "",
   "main": "./lib/job.ts",
   "scripts": {
-    "start": "npm install && tsd install",
-    "test": "tsc && mocha"
+    "start": "tsd install && npm install",
+    "test": "tsc && mocha",
+    "prepublish": "tsc",
+    "precommit": "npm test"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
+    "husky": "^0.10.2",
     "mocha": "^2.3.4"
   },
   "typescript": {
