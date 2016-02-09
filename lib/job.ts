@@ -75,6 +75,11 @@ class Job {
         return new Promise((resolve, reject) => {
             let resultPromise: Promise<any> = this.executeFn();
 
+            if (!this._isPromise(resultPromise)) {
+                this._emit('error', "ExecuteFn must returns a promise object");
+                this.stop();
+            }
+
             let executionTimeoutId = setTimeout(() => {
                 let msg = 'Executing timeout is exceeded (' + this.executionTimeout + 'ms)';
                 this._emit('error', msg);
@@ -89,6 +94,10 @@ class Job {
             resultPromise.then(resolve, reject);
         });
     };
+
+    private _isPromise(promise): Boolean {
+        return !!promise && !!promise.then;
+    }
 }
 
 export default Job;
