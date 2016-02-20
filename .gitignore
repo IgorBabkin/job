@@ -1,6 +1,5 @@
 .idea
 node_modules
-lib/*.d.ts
-lib/*.js
-test/*.d.ts
-test/*.js
+*.js
+*.d.ts
+typings
