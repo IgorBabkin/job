@@ -1,8 +1,9 @@
 language: node_js
 node_js:
   - "4"
-before_install:
+install:
   - npm install -g typescript tsd
   - tsd install
+  - npm install
 before_script:
   - npm run build
